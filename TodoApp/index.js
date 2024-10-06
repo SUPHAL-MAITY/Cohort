@@ -86,6 +86,7 @@ app.post("/add/:id",async function(req, res){
 
 })
 
+
 app.delete("/delete/:id", async function (req, res) {
   const { id } = req.params;
   const allTodos = await getAllTodoList();
@@ -96,7 +97,25 @@ app.delete("/delete/:id", async function (req, res) {
   res.json(updatedTodoList);
 });
 
+app.post("/update/:user_id/:todo_id",async function(req,res){
+  const {user_id,todo_id}=req.params;
+  console.log(user_id)
+  console.log(todo_id)
 
+  const allUsers= await getAllTodoList()
+
+  const targetUserTodos=allUsers.filter((c)=>c.id ==user_id)[0].todos.filter((c)=>c.id==todo_id)[0]
+  if(targetUserTodos.completed){
+    targetUserTodos.completed=false;
+  }else{
+    targetUserTodos.completed=true;
+  }
+  console.log(allUsers)
+  const stringAllUsers=JSON.stringify(allUsers,null,2)
+  await writeTodoList(stringAllUsers)
+
+  res.json(allUsers)
+})
 
 app.listen(3000, function () {
   console.log("port is listening at port 3000");
