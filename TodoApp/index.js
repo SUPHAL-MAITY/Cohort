@@ -16,6 +16,15 @@ const getAllTodoList = async () => {
   }
 };
 
+
+
+const  writeTodoList=async(todos)=>{
+    await writeFileAsync("todos.json",todos)
+    return ;
+
+
+}
+
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
@@ -26,6 +35,17 @@ app.get("/getall", async function (req, res) {
   res.json(allTodos);
 });
 
-app.listen(3001, function () {
-  console.log("port is listening at port 3001");
+app.delete("/delete/:id", async function (req, res) {
+  const { id } = req.params;
+  const allTodos = await getAllTodoList();
+  const updatedTodoList = allTodos.filter((c) => c.id != id);
+  console.log(updatedTodoList);
+  const  stringTodoList=JSON.stringify(updatedTodoList,null,2)
+  await writeTodoList(stringTodoList)
+  res.json(updatedTodoList);
 });
+
+app.listen(3000, function () {
+  console.log("port is listening at port 3000");
+});
+
