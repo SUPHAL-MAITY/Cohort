@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "user": "suphal",
+    "todos": [
+      {
+        "id": 1,
+        "desc": "play football",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "desc": "play cricket",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "desc": "play tennis",
+        "completed": false
+      },
+      {
+        "id": 4,
+        "desc": "drink 4 ltr water",
+        "completed": false
+      },
+      {
+        "id": 1421179801689,
+        "desc": "complete assignment",
+        "completed": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user": "Rahul",
+    "todos": [
+      {
+        "id": 1,
+        "desc": "play football",
+        "completed": false
+      },
+      {
+        "id": 2,
+        "desc": "play cricket",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "desc": "play tennis",
+        "completed": false
+      },
+      {
+        "id": 78,
+        "desc": "buy  biriyani",
+        "completed": false
+      }
+    ]
+  }
+]
