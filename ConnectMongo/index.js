@@ -8,7 +8,7 @@ const mongoose=require('mongoose')
 async function connectDB(){
   
   try{
-    const connectData= await mongoose.connect('mongodb+srv://suphal_practice:YC1H3ToYVtDvtoa6@cluster0.9vfrosu.mongodb.net/Todo_app');
+    const connectData= await mongoose.connect('');
     console.log('connected to database');
     console.log("host:",connectData.connection.host)
     app.listen(3000,()=>{
